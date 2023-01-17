@@ -1,12 +1,41 @@
 url: ~
 template:
   bootstrap: 5
-  bootswatch: cyborg
-  theme: arrow-dark
+  bootswatch: cerulean
+  #theme: arrow-dark
   bslib:
     base_font: {google: "Roboto"}
     heading_font: {google: "Roboto Slab"}
     code_font: {google: "JetBrains Mono"}
+navbar:
+  structure:
+    left:
+    - home
+    - intro
+    - guide
+    - reference
+    - articles
+    - news
+    right: github
+
+  components:
+    home:
+      icon: fas fa-home fa-lg
+      href: index.html
+    guide:
+      text: Analyst Guide
+      menu:
+      - text: Introduction
+    reference:
+      text: Functions
+      href: reference/index.html
+    github:
+      icon: fab fa-github fa-lg
+      href: https://github.com/guang-yu-zhu/YKnock
+    articles:
+      text: Articles
+      menu:
+      - text: Introduction to {YKnock}
 
 footer:
   structure:

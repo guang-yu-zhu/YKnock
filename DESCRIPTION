@@ -1,7 +1,7 @@
 Package: YKnock
 Type: Package
 Title: The YKnock Filter for Controlled Response Selection
-Version: 0.0.1
+Version: 1.0.0
 Date: 2023-01-17 
 Authors@R: c(person("Guangyu", "Zhu", role = c("aut", "cre"), email = "guangyuzhu@uri.edu"))
 Description: For more information, see the website below and the accompanying paper Identification of Significant Gene Expression Changes in Multiple Perturbation Experiments using Knockoffs
@@ -13,6 +13,7 @@ Suggests: knitr, testthat, rmarkdown, lars, ranger, stabs
 RoxygenNote: 7.1.2
 VignetteBuilder: knitr
 NeedsCompilation: no
+Github: https://github.com/guang-yu-zhu/YKnock
 Packaged: 2023-01-17 09:40:30 UTC; Guangyu
 Author: Guangyu Zhu [aut, cre] 
 Maintainer: Guangyu Zhu <guangyuzhu@uri.edu>
