@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The YKnock Filter for Controlled Response Selection • YKnock</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
@@ -56,13 +56,25 @@
       </header><div class="row">
   <div class="contents col-md-9">
 <div class="section level1">
-<div class="page-header"><h1 id="wpa-">wpa <img src="img/logo.png" align="right" width="15%"><a class="anchor" aria-label="anchor" href="#wpa-"></a>
+<div class="page-header"><h1 id="yknock-">YKnock <img src="img/logo.png" align="right" width="15%"><a class="anchor" aria-label="anchor" href="#yknock-"></a>
 </h1></div>
-<p><a href="https://github.com/microsoft/wpa/actions/" class="external-link"><img src="https://github.com/microsoft/wpa/workflows/R-CMD-check/badge.svg" alt="R build status"></a> <a href="https://opensource.org/licenses/MIT/" class="external-link"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a> <a href="https://lifecycle.r-lib.org/articles/stages.html" class="external-link"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="lifecycle"></a> <a href="https://CRAN.R-project.org/package=wpa/" class="external-link"><img src="https://www.r-pkg.org/badges/version/wpa" alt="CRAN status"></a></p>
+<p><a href="https://github.com/guang-yu-zhu/YKnock" class="external-link"><img src="https://github.com/microsoft/wpa/workflows/R-CMD-check/badge.svg" alt="R build status"></a> <a href="https://opensource.org/licenses/MIT/" class="external-link"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a> <a href="https://lifecycle.r-lib.org/articles/stages.html" class="external-link"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="lifecycle"></a> <a href="https://CRAN.R-project.org/package=wpa/" class="external-link"><img src="https://www.r-pkg.org/badges/version/wpa" alt="CRAN status"></a></p>
 <div class="section level2">
-<h2 id="analyze-and-visualize-viva-leader-insights-data">Analyze and Visualize Viva Leader Insights data<a class="anchor" aria-label="anchor" href="#analyze-and-visualize-viva-leader-insights-data"></a>
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>This is an R package for analyzing and visualizing data from <a href="https://docs.microsoft.com/en-us/workplace-analytics/" class="external-link">Microsoft Workplace Analytics</a>. For analyzing data from <a href="https://analysis.insights.viva.office.com/" class="external-link">Microsoft Viva Insights</a>, please see our other package <a href="https://microsoft.github.io/vivainsights/" class="external-link"><strong>vivainsights</strong></a>.</p>
+<pre><code><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">'guang-yu-zhu/Yknock'</span><span class="op">)</span></code></pre>
+</div>
+<div class="section level2">
+<h2 id="package">Package<a class="anchor" aria-label="anchor" href="#package"></a>
+</h2>
+<p>This is an R package for perform Controlled Response Variable Selection.</p>
+<p>Large-scale multiple perturbation experiments have the potential to reveal a more detailed understanding of the molecular pathways that respond to genetic and environmental changes. A key question in these studies is which gene expression changes are important for the response to the perturbation. This problem is challenging because</p>
+<ul>
+<li>the functional form of the nonlinear relationship between gene expression and the perturbation is unknown,</li>
+<li>identification of the most important genes is a high-dimensional variable selection problem.</li>
+</ul>
+<p>To deal with these challenges, we present here a method based on the model-X knockoffs framework and Deep Neural Networks (DNNs) to identify significant gene expression changes in multiple perturbation experiments. This approach makes no assumptions on the functional form of the dependence between the responses and the perturbations and it enjoys finite sample false discovery rate control for the selected set of important gene expression responses.</p>
+<p>We apply this approach to the Library of Integrated Network-Based Cellular Signature (LINCS) data sets which is an NIH Common Fund program that catalogs how human cells globally respond to chemical, genetic and disease perturbations. We identified important genes whose expression is directly modulated in response to perturbation with anthracycline, vorinostat, trichostatin-a, geldanamycin, and sirolimus. We compare the set of important genes that respond to these small molecules to identify co-responsive pathways. Identification of which genes respond to specific perturbation stressors can provide better understanding of the underlying mechanisms of disease and advance the identification of new drug targets.</p>
 </div>
 </div>
   </div>
