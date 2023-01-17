@@ -8,7 +8,7 @@ relevant for predicting the outcome of interest."><!-- mathjax --><script src="h
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
     
 
-    <nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light"><div class="container">
+    <nav class="navbar fixed-top navbar-dark navbar-expand-lg bg-dark"><div class="container">
     
     <a class="navbar-brand me-2" href="../index.html">YKnock</a>
 
@@ -136,8 +136,8 @@ bioRxiv 2021.10.18.464822;
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="va">r</span> <span class="op">=</span> <span class="fl">100</span>;<span class="va">p</span> <span class="op">=</span> <span class="fl">20</span>;<span class="va">n</span> <span class="op">=</span> <span class="fl">40</span></span>
 <span class="r-in"><span class="va">m</span> <span class="op">=</span> <span class="fl">10</span>  <span class="co"># num of important response</span></span>
-<span class="r-in"><span class="va">rho</span><span class="op">=</span><span class="fl">0.2</span></span>
-<span class="r-in"><span class="va">betaValue</span> <span class="op">=</span> <span class="fl">1.5</span></span>
+<span class="r-in"><span class="va">rho</span> <span class="op">=</span> <span class="fl">0.2</span></span>
+<span class="r-in"><span class="va">betaValue</span> <span class="op">=</span> <span class="fl">1</span></span>
 <span class="r-in"><span class="va">SigmaX</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="va">rho</span>,<span class="va">p</span>,<span class="va">p</span><span class="op">)</span></span>
 <span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/diag.html" class="external-link">diag</a></span><span class="op">(</span><span class="va">SigmaX</span><span class="op">)</span><span class="op">=</span><span class="fl">1</span></span>
 <span class="r-in"><span class="va">betaA</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span><span class="op">*</span><span class="va">betaValue</span>,size<span class="op">=</span><span class="va">m</span><span class="op">*</span><span class="va">p</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, nrow <span class="op">=</span> <span class="va">m</span>,ncol <span class="op">=</span> <span class="va">p</span><span class="op">)</span></span>
@@ -146,23 +146,10 @@ bioRxiv 2021.10.18.464822;
 <span class="r-in"><span class="va">sigma</span><span class="op">=</span><span class="fl">1</span></span>
 <span class="r-in"><span class="va">X</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="va">n</span><span class="op">*</span><span class="va">p</span><span class="op">)</span>,<span class="va">n</span><span class="op">)</span><span class="op"><a href="https://rdrr.io/r/base/matmult.html" class="external-link">%*%</a></span><span class="fu"><a href="https://rdrr.io/r/base/chol.html" class="external-link">chol</a></span><span class="op">(</span><span class="va">SigmaX</span><span class="op">)</span></span>
 <span class="r-in"><span class="va">Y</span> <span class="op">=</span> <span class="va">X</span> <span class="op"><a href="https://rdrr.io/r/base/matmult.html" class="external-link">%*%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/t.html" class="external-link">t</a></span><span class="op">(</span><span class="va">beta</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">sqrt</a></span><span class="op">(</span><span class="va">sigma</span><span class="op">)</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="va">n</span><span class="op">*</span><span class="va">r</span><span class="op">)</span>,<span class="va">n</span>,<span class="va">r</span><span class="op">)</span></span>
+<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
 <span class="r-in"><span class="va">result</span><span class="op">=</span><span class="fu">YKnock_filter</span><span class="op">(</span><span class="va">X</span>, <span class="va">Y</span><span class="op">)</span></span>
 <span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">result</span><span class="op">$</span><span class="va">selected</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]   1   2   3   4   5   6   7   8   9  10  13  14  17  18  22  25  26  28  34</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [20]  36  37  38  39  43  44  45  46  47  48  57  60  62  68  69  71  72  74  76</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [39]  79  86  87  91  94  95  96  97 103 105 109 110 114 119 120 123 124 125 126</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [58] 127 129 130 135 137 138 147 149 155 160 162 163 166 169 173 174 178 181 182</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [77] 186 193</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># Basic usage with default arguments</span></span>
-<span class="r-in"><span class="va">result</span> <span class="op">=</span> <span class="fu">YKnock_filter</span> <span class="op">(</span><span class="va">X</span>, <span class="va">Y</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">result</span><span class="op">$</span><span class="va">selected</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]   1   2   3   4   5   6   7   8   9  10  13  14  17  25  26  28  32  34  36</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [20]  37  38  39  47  48  57  60  62  64  69  71  72  74  76  86  87  89  91  94</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [39]  95  96  97 113 115 118 121 122 135 136 148 149 151 152 154 163 164 169 170</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [58] 175 178 179 182 188 191 194 196 198</span>
-<span class="r-in"></span>
-<span class="r-in"></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]  1  2  3  4  5  6  7  8  9 10</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

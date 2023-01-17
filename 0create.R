@@ -1,14 +1,15 @@
+file.edit('.github/workflows/_pkgdown.yml')
 file.edit('.gitignore')
 #  ----
 library(roxygen2)
 roxygenise(clean = TRUE)
 #-----
 library(pkgdown)
-usethis::use_github_action("pkgdown")
+#usethis::use_github_action("pkgdown")
 usethis::use_pkgdown()
 pkgdown::build_site()
 
-
+devtools::build_manual()
 #  usethis -----
 library(usethis)
 use_description(fields = list(Language = "es"))

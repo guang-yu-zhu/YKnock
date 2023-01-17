@@ -65,8 +65,8 @@ or the importance statistics. Some examples can be found in the vignette.
 \examples{
 r = 100;p = 20;n = 40
 m = 10  # num of important response
-rho=0.2
-betaValue = 1.5
+rho = 0.2
+betaValue = 1
 SigmaX=matrix(rho,p,p)
 diag(SigmaX)=1
 betaA=matrix(sample(c(-1,1)*betaValue,size=m*p, replace = TRUE), nrow = m,ncol = p)
@@ -75,14 +75,9 @@ beta[1:m,]=betaA
 sigma=1
 X = matrix(rnorm(n*p),n)\%*\%chol(SigmaX)
 Y = X \%*\% t(beta) + sqrt(sigma)*matrix(rnorm(n*r),n,r)
+set.seed(1)
 result=YKnock_filter(X, Y)
 print(result$selected)
-
-# Basic usage with default arguments
-result = YKnock_filter (X, Y)
-print(result$selected)
-
-
 }
 \references{
 Identification of Significant Gene Expression Changes in Multiple Perturbation Experiments using Knockoffs

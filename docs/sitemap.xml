@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://guang-yu-zhu.github.io/YKnock/404.html</loc>
+    <loc>/404.html</loc>
   </url>
   <url>
-    <loc>https://guang-yu-zhu.github.io/YKnock/LICENSE-text.html</loc>
+    <loc>/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>https://guang-yu-zhu.github.io/YKnock/LICENSE.html</loc>
+    <loc>/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://guang-yu-zhu.github.io/YKnock/authors.html</loc>
+    <loc>/authors.html</loc>
   </url>
   <url>
-    <loc>https://guang-yu-zhu.github.io/YKnock/index.html</loc>
+    <loc>/index.html</loc>
   </url>
   <url>
-    <loc>https://guang-yu-zhu.github.io/YKnock/reference/YKnock_filter.html</loc>
+    <loc>/reference/YKnock_filter.html</loc>
   </url>
   <url>
-    <loc>https://guang-yu-zhu.github.io/YKnock/reference/create.solve_asdp.html</loc>
+    <loc>/reference/create.solve_asdp.html</loc>
   </url>
   <url>
-    <loc>https://guang-yu-zhu.github.io/YKnock/reference/create.solve_equi.html</loc>
+    <loc>/reference/create.solve_equi.html</loc>
   </url>
   <url>
-    <loc>https://guang-yu-zhu.github.io/YKnock/reference/create.solve_sdp.html</loc>
+    <loc>/reference/create.solve_sdp.html</loc>
   </url>
   <url>
-    <loc>https://guang-yu-zhu.github.io/YKnock/reference/create_YKnock.html</loc>
+    <loc>/reference/create_YKnock.html</loc>
   </url>
   <url>
-    <loc>https://guang-yu-zhu.github.io/YKnock/reference/divide.sdp.html</loc>
+    <loc>/reference/divide.sdp.html</loc>
   </url>
   <url>
-    <loc>https://guang-yu-zhu.github.io/YKnock/reference/index.html</loc>
+    <loc>/reference/index.html</loc>
   </url>
   <url>
-    <loc>https://guang-yu-zhu.github.io/YKnock/reference/knockoff.threshold.html</loc>
+    <loc>/reference/knockoff.threshold.html</loc>
   </url>
   <url>
-    <loc>https://guang-yu-zhu.github.io/YKnock/reference/merge.clusters.html</loc>
+    <loc>/reference/merge.clusters.html</loc>
   </url>
   <url>
-    <loc>https://guang-yu-zhu.github.io/YKnock/reference/stat.modelY_classification_coef.html</loc>
+    <loc>/reference/stat.modelY_classification_coef.html</loc>
   </url>
   <url>
-    <loc>https://guang-yu-zhu.github.io/YKnock/reference/stat.modelY_coef.html</loc>
+    <loc>/reference/stat.modelY_coef.html</loc>
   </url>
   <url>
-    <loc>https://guang-yu-zhu.github.io/YKnock/reference/stat_modelY_maxlam.html</loc>
+    <loc>/reference/stat_modelY_maxlam.html</loc>
   </url>
   <url>
-    <loc>https://guang-yu-zhu.github.io/YKnock/reference/vectorize_matrix.html</loc>
+    <loc>/reference/vectorize_matrix.html</loc>
   </url>
 </urlset>
