@@ -3,6 +3,8 @@
 _data/
 _development/
 .RData
-docs
 Meta
 .RDataTmp
+0create.R
+sourceDir.R
+try.R
