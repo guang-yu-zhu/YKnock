@@ -1,4 +1,18 @@
-url: ~
+url: https://guang-yu-zhu.github.io/YKnock/
 template:
+  bootstrap: 5
+  bootswatch: lux
+  bslib:
+    base_font: {google: "Roboto"}
+    heading_font: {google: "Roboto Slab"}
+    code_font: {google: "JetBrains Mono"}
+    pkgdown-nav-height: 100px
+navbar:
+  structure:
+    left:  [intro, reference, articles, tutorials, news]
+    right: [search, github]
 
-
+footer:
+  structure:
+    left:
+    right:
