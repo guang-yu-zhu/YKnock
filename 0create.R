@@ -4,6 +4,7 @@ library(roxygen2)
 roxygenise(clean = TRUE)
 #-----
 library(pkgdown)
+usethis::use_github_action("pkgdown")
 usethis::use_pkgdown()
 pkgdown::build_site()
 

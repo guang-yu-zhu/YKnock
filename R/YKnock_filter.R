@@ -109,12 +109,13 @@ YKnock_filter <- function(X, Y,
 
   # Validate input dimensions
   n = nrow(X); p = ncol(X); r= ncol(Y)
-
+  orig = 1:r
   # Create knockoff variables
   Yk = knockoffs(Y)
-
+  	
   # Compute statistics
-  W = statistic(X, Y, Yk)
+  Z = statistic(X, Y, Yk)
+  W = abs(Z[orig]) - abs(Z[orig+r])
 
   # Run the knockoff filter
   t = knockoff.threshold(W, fdr=fdr, offset=offset)
