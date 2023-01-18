@@ -3,20 +3,19 @@
 #' @import stats methods
 NULL
 
-#' The YKncok Filter
+#' The YKnock Filter
 #'
-#' This function runs the Knockoffs procedure from start to finish, selecting variables
-#' relevant for predicting the outcome of interest.
+#' This function runs the model-Y Knockoffs procedure from start to finish, selecting important responses.
 #'
 #' This function creates the knockoffs, computes the importance statistics,
-#' and selects variables.
-#' It is the main entry point for the knockoff package.
+#' and selects responses.
+#' It is the main entry point for the YKnock package.
 #'
 #' @param X n-by-p matrix or data frame of predictors.
 #' @param Y n-by-r matrix or data frame of responses.
-#' @param knockoffs method used to construct knockoffs for the \eqn{X} variables.
-#' It must be a function taking a n-by-p matrix as input and returning a n-by-p matrix of knockoff variables.
-#' By default, approximate model-X Gaussian knockoffs are used.
+#' @param knockoffs method used to construct knockoffs for the \eqn{Y} variables.
+#' It must be a function taking a n-by-r matrix as input and returning a n-by-r matrix of knockoff variables.
+#' By default, approximate model-Y Gaussian knockoffs are used.
 #' @param statistic statistics used to assess variable importance. By default,
 #' a lasso statistic with cross-validation is used. See the Details section for more information.
 #' @param fdr target false discovery rate (default: 0.1).
@@ -25,13 +24,13 @@ NULL
 #' controls the false discovery rate (FDR) according to the usual definition,
 #' while an offset of 0 controls a modified FDR.
 #'
-#' @return An object of class "knockoff.result". This object is a list
+#' @return An object of class "YKnock". This object is a list
 #'  containing at least the following components:
 #'  \item{Y}{matrix of original responses}
 #'  \item{Yk}{matrix of knockoff responses}
 #'  \item{statistic}{computed test statistics}
 #'  \item{threshold}{computed selection threshold}
-#'  \item{selected}{named vector of selected variables}
+#'  \item{selected}{named vector of selected responses}
 #'
 #' @details
 #'
@@ -46,14 +45,16 @@ NULL
 #' or the importance statistics. Some examples can be found in the vignette.
 #'
 #' @references
-#'   Identification of Significant Gene Expression Changes in Multiple Perturbation Experiments using Knockoffs
+#' Identification of Significant Gene Expression Changes in Multiple Perturbation Experiments using Knockoffs
+#'
 #' Tingting Zhao, Guangyu Zhu, Patrick Flaherty
 #' bioRxiv 2021.10.18.464822;
-#'   \href{https://www.biorxiv.org/content/10.1101/2021.10.18.464822v1}{https://www.biorxiv.org/content/10.1101/2021.10.18.464822v1}
+#'
+#' \href{https://www.biorxiv.org/content/10.1101/2021.10.18.464822v1}{https://www.biorxiv.org/content/10.1101/2021.10.18.464822v1}
 #'
 #'
 #' @examples
-#' r = 100;p = 20;n = 40
+#' r = 100; p = 10; n = 40
 #' m = 10  # num of important response
 #' rho = 0.2
 #' betaValue = 1
