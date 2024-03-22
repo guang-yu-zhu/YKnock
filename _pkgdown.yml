@@ -1,12 +1,16 @@
-url: ~
+url: https://guang-yu-zhu.github.io/Yknock/
 template:
-  bootstrap: 5
-  bootswatch: cerulean
-  #theme: arrow-dark
-  bslib:
-    base_font: {google: "Roboto"}
-    heading_font: {google: "Roboto Slab"}
-    code_font: {google: "JetBrains Mono"}
+  package: zpreferably
+  bootstrap: 3
+  params:
+    ganalytics:
+    toggle: manual
+home:
+  title: YKnock
+  description: Controlled Response Variable Selection
+authors:
+  Guangyu Zhu:
+    href: https://guangyuzhu.rbind.io/
 navbar:
   structure:
     left:
@@ -42,5 +46,6 @@ navbar:
 
 footer:
   structure:
-    left:
     right:
+  components:
+    legal: Provided without **any warranty**.
