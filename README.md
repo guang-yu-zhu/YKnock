@@ -1,4 +1,4 @@
-# YKnock <img src="https://github.com/guang-yu-zhu/YKnock/raw/master/img/logo.png" align="right" width=15% />
+# YKnock <img src="man/figures/logo.png" align="right" width=15% />
 
   [![R build status](https://github.com/microsoft/wpa/workflows/R-CMD-check/badge.svg)](https://github.com/guang-yu-zhu/YKnock)
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT/)
