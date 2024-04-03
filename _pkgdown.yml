@@ -26,17 +26,20 @@ navbar:
     guide:
       text: Analyst Guide
       menu:
-      - text: Introduction
+        - text: Introduction
     reference:
       text: Functions
       href: reference/index.html
+      icon: fa-file-code-o
     articles:
       text: Articles
+      icon: fa-book
       menu:
-      - text: Introduction to {YKnock}
+        - text: Introduction to {YKnock}
     news:
       text: Changelog
       href: news/index.html
+      icon: fa-newspaper-o
     personal:
       icon: fa-user
       href: http://guangyuzhu.rbind.io
